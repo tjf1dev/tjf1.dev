@@ -3,6 +3,7 @@ import { Activity as ActivityModel } from "../models";
 import { extractUrl } from "../tools";
 import { space_grotesk } from "../fonts";
 import NoiseBackground from "./NoiseBackground";
+import ContainerGlare from "./ContainerGlare";
 
 export default function Activity({ activity }: { activity: ActivityModel }) {
   if (activity.id == "custom") return;
@@ -16,11 +17,12 @@ export default function Activity({ activity }: { activity: ActivityModel }) {
     5: "competing",
   };
   return (
-    <div className="backdrop-blur-3xl rounded-xl p-2 border border-white/20">
+    <div className="backdrop-blur-sm rounded-xl p-2 border border-white/20 relative">
       {/* <p className={`${space_grotesk.className} text-sm`}>
         {activityTypeMap[activity.type]}
       </p> */}
       {/* <NoiseBackground /> */}
+      {/* <ContainerGlare bottomLeft /> */}
 
       <div className="flex flex-row items-center gap-2">
         {activity.assets.large_image && (

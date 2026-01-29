@@ -4,6 +4,7 @@ import { SpotifyStatus } from "../models";
 import Image from "next/image";
 import { space_grotesk, space_mono } from "../fonts";
 import NoiseBackground from "./NoiseBackground";
+import ContainerGlare from "./ContainerGlare";
 
 export default function SpotifyStatusComp({
   spotify,
@@ -46,8 +47,9 @@ export default function SpotifyStatusComp({
     return () => clearInterval(interval);
   }, [spotify]);
   return (
-    <div className="backdrop-blur-3xl rounded-xl h-fit p-2 border border-white/20">
+    <div className="backdrop-blur-sm rounded-xl h-fit p-2 border border-white/20 relative">
       {/* <NoiseBackground /> */}
+      {/* <ContainerGlare topRight /> */}
 
       <p
         className={`${space_grotesk.className} text-sm flex flex-row items-center gap-1`}
