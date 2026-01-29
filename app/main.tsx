@@ -99,6 +99,9 @@ export default function Main() {
           {user && <Activities user={user} />}
         </div>
       </div>
+      <p className="absolute right-1 bottom-1 opacity-50 text-sm leading-none m-0">
+        running v{process.env.version}
+      </p>
     </div>
   );
 }

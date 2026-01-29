@@ -4,7 +4,7 @@ import { inter } from "./fonts";
 
 export const metadata: Metadata = {
   title: "tjf1",
-  description: "hiii! website about me",
+  description: "hiiIII!",
 };
 
 export default function RootLayout({

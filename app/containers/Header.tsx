@@ -50,7 +50,9 @@ export default function Header() {
         text="JOIN MY DISCORD SERVER!!!!"
         long
       />
-      <p>i'll update this website every time i think of something new</p>
+      <p className="m-0">
+        i'll update this website every time i think of something new
+      </p>
     </div>
   );
 }
