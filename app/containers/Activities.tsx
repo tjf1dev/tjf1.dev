@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Activity from "../components/Activity";
 import SpotifyStatusComp from "../components/SpotifyStatus";
 import { space_grotesk } from "../fonts";
@@ -22,12 +23,17 @@ export default function Activities({ user }: { user: UserResponseData }) {
           color: statusColorStyleMap[user.discord_status],
         }}
       >
-        <img src={"/icons/discord.svg"} width={12} height={12} />
+        <Image
+          alt="discord logo"
+          src={"/icons/discord.svg"}
+          width={12}
+          height={12}
+        />
         {user?.discord_status}
       </p>
       {status && (
         <p>
-          {status.emoji.name} {status.state}
+          {status.emoji?.name} {status.state}
         </p>
       )}
       {user?.spotify && <SpotifyStatusComp spotify={user.spotify} />}

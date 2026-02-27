@@ -19,7 +19,7 @@ export default function LinkButton({
   noPadding?: boolean;
   moreStyles?: string;
 }) {
-  var styles = `border border-white/20 rounded-md cursor-pointer flex flex-row items-center gap-2 font-medium ${space_grotesk.className} ${
+  let styles = `border border-white/20 rounded-md cursor-pointer flex flex-row items-center gap-2 font-medium ${space_grotesk.className} ${
     noPadding ? "" : "p-1"
   } ${!long && "aspect-square justify-center"} `;
   styles += moreStyles;

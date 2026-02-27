@@ -42,7 +42,8 @@ export default function Header() {
         <span className="bg-white/10 rounded-xs px-0.5">{time}</span> for me!
       </p>
       <p>
-        i don't usually accept discord friend requests, you can dm me though
+        i don&apos;t usually accept discord friend requests, you can dm me
+        though
       </p>
       <LinkButton
         logo="/icons/discord.svg"
@@ -51,7 +52,7 @@ export default function Header() {
         long
       />
       <p className="m-0">
-        i'll update this website every time i think of something new
+        i&apos;ll update this website every time i think of something new
       </p>
     </div>
   );

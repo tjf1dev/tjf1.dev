@@ -1,19 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { UserResponse, UserResponseData } from "./models";
-import Image from "next/image";
-import { space_grotesk, space_mono, work_sans } from "./fonts";
-import SpotifyStatusComp from "./components/SpotifyStatus";
-import Activity from "./components/Activity";
-import { getTime } from "./tools";
-import NoiseBackground from "./components/NoiseBackground";
 import useWindowFocus from "./util/WindowFocus";
-import { motion } from "motion/react";
 import { useMediaQuery } from "react-responsive";
-import LinkButton from "./components/LinkButton";
-import dynamic from "next/dynamic";
 import GridBackground from "./components/GridBackground";
-import ContainerGlare from "./components/ContainerGlare";
 import Activities from "./containers/Activities";
 import Links from "./containers/Links";
 import OtherInfo from "./containers/OtherInfo";
@@ -25,11 +15,16 @@ export default function Main() {
   const isFocused = useWindowFocus();
   const isWeb = useMediaQuery({ minWidth: 1280 });
   async function getDiscordData() {
-    const req = await fetch(
-      "https://api.lanyard.rest/v1/users/978596696156147754",
-    );
-    const data = (await req.json()) as UserResponse;
-    setUser(data.data);
+    try {
+      const req = await fetch(
+        "https://api.lanyard.rest/v1/users/978596696156147754",
+      );
+
+      const data = (await req.json()) as UserResponse;
+      setUser(data.data);
+    } catch {
+      console.error("failed to fetch discord info");
+    }
   }
   const [nextRefresh, setNextRefresh] = useState(10);
 
@@ -53,14 +48,6 @@ export default function Main() {
     return () => clearInterval(interval);
   }, []);
 
-  function hexToRgb(hex: string): [number, number, number] {
-    const cleaned = hex.replace("#", "");
-    const r = parseInt(cleaned.slice(0, 2), 16);
-    const g = parseInt(cleaned.slice(2, 4), 16);
-    const b = parseInt(cleaned.slice(4, 6), 16);
-    return [r, g, b];
-  }
-
   function getBackgroundColor() {
     const now = new Date();
     const parts = new Intl.DateTimeFormat("en-GB", {
@@ -68,7 +55,7 @@ export default function Main() {
       hour: "numeric",
     }).formatToParts(now);
 
-    var hour = Number(parts.find((p) => p.type === "hour")?.value || 0);
+    const hour = Number(parts.find((p) => p.type === "hour")?.value || 0);
     if (hour >= 5 && hour < 8) {
       return "#806653"; // sunrise
     } else if (hour >= 8 && hour < 17) {
@@ -100,7 +87,7 @@ export default function Main() {
         </div>
       </div>
       <p className="absolute right-1 bottom-1 opacity-50 text-sm leading-none m-0">
-        running v{process.env.version}
+        next refresh in {nextRefresh}s | running v{process.env.version}
       </p>
     </div>
   );
