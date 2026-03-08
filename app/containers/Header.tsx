@@ -31,15 +31,20 @@ export default function Header() {
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row items-center gap-1">
           <h1 className={`${space_grotesk.className} font-black text-4xl`}>
-            hey there! im tjf1 :3
+            hey there! im tjf1
           </h1>
         </div>
       </div>
-      <p>polish silly programmer and more</p>
+      <p>
+        polish <i>silly</i> programmer and more
+      </p>
       <p>i make websites and discord bots in my free time</p>
       <p>
-        its currently{" "}
-        <span className="bg-white/10 rounded-xs px-0.5">{time}</span> for me!
+        its currently
+        <span className="bg-white/10 rounded-xs px-0.5 ml-1">
+          {time ?? "--:--:-- AM"}
+        </span>{" "}
+        for me!
       </p>
       <p>
         i don&apos;t usually accept discord friend requests, you can dm me

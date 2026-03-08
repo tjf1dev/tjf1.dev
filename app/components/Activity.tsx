@@ -17,7 +17,7 @@ export default function Activity({ activity }: { activity: ActivityModel }) {
     5: "competing",
   };
   return (
-    <div className="backdrop-blur-sm rounded-xl p-2 border border-white/20 relative">
+    <div className="rounded-xl p-2 border border-white/20 relative">
       {/* <p className={`${space_grotesk.className} text-sm`}>
         {activityTypeMap[activity.type]}
       </p> */}
@@ -25,7 +25,7 @@ export default function Activity({ activity }: { activity: ActivityModel }) {
       {/* <ContainerGlare bottomLeft /> */}
 
       <div className="flex flex-row items-center gap-2">
-        {activity.assets.large_image && (
+        {activity.assets?.large_image && (
           <Image
             src={extractUrl(activity.assets.large_image)}
             width={64}

@@ -86,8 +86,8 @@ export default function Main() {
           {user && <Activities user={user} />}
         </div>
       </div>
-      <p className="absolute right-1 bottom-1 opacity-50 text-sm leading-none m-0">
-        next refresh in {nextRefresh}s | running v{process.env.version}
+      <p className="absolute right-1 bottom-1 opacity-20 text-sm leading-none m-0 tabular-nums">
+        {nextRefresh}s | v{process.env.version}
       </p>
     </div>
   );
