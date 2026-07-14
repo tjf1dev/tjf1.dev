@@ -38,7 +38,7 @@ export default function Links({ isWeb }: { isWeb: boolean }) {
       />
       <LinkButton
         logo="/icons/lastfm.svg"
-        href="https://last.fm/user/Tomekjestfajny1/"
+        href="https://last.fm/user/tjf1dev"
         text="Last.fm"
         long={!isWeb}
       />
