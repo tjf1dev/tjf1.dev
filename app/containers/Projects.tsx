@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { space_grotesk } from "../fonts";
 import ContainerGlare from "../components/ContainerGlare";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -18,18 +19,19 @@ export default function Projects() {
             className="rounded-md"
           />
           <div>
-            <h3
-              className={`flex flex-row gap-1 font-semibold items-center leading-none m-0 text-lg ${space_grotesk.className}`}
-            >
-              protochat
-            </h3>
+            <Link href="https://protochat.tjf1.dev">
+              <h3
+                className={`flex flex-row gap-1 font-semibold items-center leading-none m-0 text-lg ${space_grotesk.className}`}
+              >
+                protochat
+              </h3>
+            </Link>
             <p>
               an independent chatting platform, focused on privacy and
               simplicity.
             </p>
             <p className="text-xs tracking-tighter">
-              alpha, active development. | not available yet, closed source (for
-              now)
+              alpha, active development. | not released yet
             </p>
           </div>
         </div>

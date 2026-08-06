@@ -81,9 +81,9 @@ export default function Main() {
           <Projects />
           <OtherInfo />
           <Links isWeb={isWeb} />
-        </div>
-        <div className="flex flex-col gap-2">
-          {user && <Activities user={user} />}
+          <div className="flex flex-col gap-2">
+            {user && <Activities user={user} />}
+          </div>
         </div>
       </div>
       <p className="absolute right-1 bottom-1 opacity-20 text-sm leading-none m-0 tabular-nums">

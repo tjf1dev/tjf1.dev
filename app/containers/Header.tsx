@@ -51,6 +51,12 @@ export default function Header() {
         though
       </p>
       <LinkButton
+        logo="/icons/protochat.svg"
+        href="https://protochat.tjf1.dev"
+        text="looking for protochat instead?"
+        long
+      />
+      <LinkButton
         logo="/icons/discord.svg"
         href="https://discord.gg/ZRA6XzTshx"
         text="JOIN MY DISCORD SERVER!!!!"
