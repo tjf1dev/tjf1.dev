@@ -33,7 +33,7 @@ export default function LinkButton({
         transition: { duration: 0.1, ease: "easeInOut" },
       }}
     >
-      <Image src={logo} height={32} width={32} alt="logo" />
+      <Image src={logo} height={32} width={32} alt="logo" className="h-8 w-8" />
       {long && <p>{text}</p>}
     </motion.a>
   );

@@ -27,11 +27,12 @@ export default function Projects() {
               </h3>
             </Link>
             <p>
-              an independent chatting platform, focused on privacy and
-              simplicity.
+              a simple, customizable chatting platform, built to be fast and
+              with privacy in mind.
             </p>
             <p className="text-xs tracking-tighter">
-              alpha, active development. | not released yet
+              alpha, active development. (account preregistrations open) | not
+              released yet
             </p>
           </div>
         </div>
@@ -54,7 +55,7 @@ export default function Projects() {
             </a>
             <span>all-in-one powerful discord bot</span>
             <span className="text-xs tracking-tighter">
-              beta, active development. |{" "}
+              stable-ish{" "}
               <a href="https://github.com/tjf1dev/codygen">open source.</a>
             </span>
           </div>
@@ -78,7 +79,7 @@ export default function Projects() {
             </a>
             <p>easy to use lyrics engine and API.</p>
             <p className="text-xs tracking-tighter">
-              status: beta, maintained (no new updates planned) |{" "}
+              development paused until further notice |{" "}
               <a href="https://github.com/lyr-x">kinda open source??</a>
             </p>
           </div>

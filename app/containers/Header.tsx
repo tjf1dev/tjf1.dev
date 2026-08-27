@@ -25,7 +25,7 @@ export default function Header() {
     };
   }, []);
   return (
-    <div className="backdrop-blur-sm rounded-xl p-2 border border-white/20 relative overflow-auto flex flex-col gap-1">
+    <div className="backdrop-blur-sm rounded-xl p-2 border border-white/20 relative overflow-auto">
       {/* <NoiseBackground /> */}
       <ContainerGlare topLeft />
       <div className="flex flex-row justify-between items-center">
@@ -35,6 +35,12 @@ export default function Header() {
           </h1>
         </div>
       </div>
+      <LinkButton
+        logo="/icons/protochat.svg"
+        href="https://protochat.tjf1.dev"
+        text="looking for protochat instead?"
+        long
+      />
       <p>
         polish <i>silly</i> programmer and more
       </p>
@@ -50,21 +56,16 @@ export default function Header() {
         i don&apos;t usually accept discord friend requests, you can dm me
         though
       </p>
-      <LinkButton
-        logo="/icons/protochat.svg"
-        href="https://protochat.tjf1.dev"
-        text="looking for protochat instead?"
-        long
-      />
+      <p>
+        you can join my discord server for updates! the server is read only
+        though
+      </p>
       <LinkButton
         logo="/icons/discord.svg"
         href="https://discord.gg/ZRA6XzTshx"
-        text="JOIN MY DISCORD SERVER!!!!"
+        text="Discord server"
         long
       />
-      <p className="m-0">
-        i&apos;ll update this website every time i think of something new
-      </p>
     </div>
   );
 }

@@ -9,26 +9,27 @@ import Links from "./containers/Links";
 import OtherInfo from "./containers/OtherInfo";
 import Projects from "./containers/Projects";
 import Header from "./containers/Header";
-
+import { version } from "@/package.json";
 export default function Main() {
   const [user, setUser] = useState<UserResponseData>();
   const isFocused = useWindowFocus();
   const isWeb = useMediaQuery({ minWidth: 1280 });
-  async function getDiscordData() {
-    try {
-      const req = await fetch(
-        "https://api.lanyard.rest/v1/users/978596696156147754",
-      );
 
-      const data = (await req.json()) as UserResponse;
-      setUser(data.data);
-    } catch {
-      console.error("failed to fetch discord info");
-    }
-  }
   const [nextRefresh, setNextRefresh] = useState(10);
 
   useEffect(() => {
+    async function getDiscordData() {
+      try {
+        const req = await fetch(
+          "https://api.lanyard.rest/v1/users/978596696156147754",
+        );
+
+        const data = (await req.json()) as UserResponse;
+        setUser(data.data);
+      } catch {
+        console.error("failed to fetch discord info");
+      }
+    }
     getDiscordData();
 
     let counter = 10;
@@ -75,11 +76,11 @@ export default function Main() {
       }}
     >
       <GridBackground />
-      <div className="flex flex-col xl:flex-row justify-around lg:absolute gap-2 lg:top-1/2 lg:left-1/2 lg:-translate-1/2 w-full lg:w-3/4 xl:h-5/6 p-2">
+      <div className="flex flex-col xl:flex-row justify-around lg:absolute gap-2 lg:top-1/2 lg:left-1/2 lg:-translate-1/2 w-full lg:w-11/12 xl:h-11/12 p-2">
         <div className="flex flex-col gap-2 flex-1">
           <Header />
           <Projects />
-          <OtherInfo />
+          <OtherInfo isWeb={isWeb} />
           <Links isWeb={isWeb} />
           <div className="flex flex-col gap-2">
             {user && <Activities user={user} />}
@@ -87,7 +88,7 @@ export default function Main() {
         </div>
       </div>
       <p className="absolute right-1 bottom-1 opacity-20 text-sm leading-none m-0 tabular-nums">
-        {nextRefresh}s | v{process.env.version}
+        {nextRefresh}s | v{version}
       </p>
     </div>
   );
