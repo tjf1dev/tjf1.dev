@@ -53,6 +53,10 @@ export default function Header() {
         for me!
       </p>
       <p>
+        if you need to contact me, you can do it on discord or by{" "}
+        <a href="mailto:hi@tjf1.dev">emailing me </a> (hi@tjf1.dev)
+      </p>
+      <p>
         i don&apos;t usually accept discord friend requests, you can dm me
         though
       </p>
